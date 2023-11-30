@@ -13,10 +13,16 @@
 ## Dùng mariadb chạy file works.sql để tham khảo
 
 ### Trang company hiển thị các công ty 
-![image](https://github.com/PhamBaBac/www_lap02_week_02_restapi/assets/99248518/72e14338-fcca-4e24-ae4d-159bc89cea19)
+![image](https://github.com/PhamBaBac/WWW_Lab05/assets/99248518/f3ada794-e64c-4f01-94e8-2ae1ff2307cd)
 
 ### nhấn add company để thêm mới 1 công ty
 ![image](https://github.com/PhamBaBac/WWW_Lab05/assets/99248518/6c1f66c9-1186-40e8-8222-bd75ed13c2e0)
+
+### Nhấn vào candidate để xem các ứng viên
+![image](https://github.com/PhamBaBac/WWW_Lab05/assets/99248518/d349581d-52ed-4c2a-adcb-e47c29fc39d5)
+
+### Nhấn vào view đê xem chi tiết ứng viên
+![image](https://github.com/PhamBaBac/WWW_Lab05/assets/99248518/59857814-73cd-4f23-a7f2-1c75f6c17e3c)
 
 ### Nhấn more details để xem chi tiết công ty và các job
 ![image](https://github.com/PhamBaBac/WWW_Lab05/assets/99248518/76815ae1-080d-4146-a036-f7787702a500)

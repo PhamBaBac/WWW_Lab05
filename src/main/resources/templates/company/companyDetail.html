@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org"
+>
+<head>
+    <meta charset="UTF-8">
+    <title th:text="${company.companyName}"></title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid">
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+                <a class="nav-link active" aria-current="page" href="#">Jobs</a>
+                <a class="nav-link"  th:href="'/companies/'+${company.companyId}+'/job'">Post Job</a>
+            </div>
+        </div>
+    </div>
+</nav>
+<div class="container py-5">
+    <div class="card-header">
+        <h1 class="text-center mb-1" th:text="${company.companyName}"></h1>
+    </div>
+    <div class="card col-12 mb-2">
+        <div class="card-body">
+            <div class="row">
+                <div class="col-md-6">
+                   <div class="card">
+                       <div  class="card-body">
+                           <p th:text="${company.companyAbout}"></p>
+                       </div>
+                   </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <th:block th:each="jobDto : ${company.jobDtos}">
+                                <div class="card mb-5">
+                                    <div class="card-header">
+                                        <h5 class="text-center" th:text="${jobDto.jobName}"></h5>
+                                    </div>
+                                    <div class="card-body">
+                                        <h6>Description:</h6>
+                                        <p th:text="${jobDto.jobDescription}"></p>
+                                        <h6>Requirements:</h6>
+                                        <ul>
+                                            <th:block th:each="skillDto : ${jobDto.jobSkillDtoList}">
+                                                <li th:text="${skillDto.skillName }"></li>
+                                            </th:block>
+                                            <th:block th:each="skillDto : ${jobDto.jobSkillDtoList}">
+                                                <li th:text="${skillDto.skillType.toLowerCase()}"></li>
+                                            </th:block>
+                                        </ul>
+                                        <a href="/show-add-form" class="btn btn-primary">Apply</a>
+                                    </div>
+                                </div>
+                            </th:block>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="card col-md-12">
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-md-6">
+                        <span>Address</span>
+                        <h6 class="fs-6" th:text="${company.companyAddressNumber}+ ' ' +${company.companyStreet}+ ', ' +${company.companyCity}"></h6>
+                    </div>
+                    <div class="col-md-6">
+                        <span>Country</span>
+                        <h6 class="fs-6" th:text="${company.companyCountry}"></h6>
+                    </div>
+                    <div class="col-md-6">
+                        <span>Email</span>
+                        <h6 class="fs-6" th:text="${company.companyEmail}"></h6>
+                    </div>
+                    <div class="col-md-6">
+                        <span>Phone</span>
+                        <h6 class="fs-6" th:text="${company.companyPhone}"></h6>
+                    </div>
+                    <div class="col-md-12">
+                        <span>Website</span>
+                        <br/>
+                        <a class="block" th:href="${company.companyWebUrl}" th:text="${company.companyWebUrl}"></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
